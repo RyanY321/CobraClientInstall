@@ -3,14 +3,14 @@ chcp 65001 >nul
 title Cobra Client
 Color B
 
- if exist "C:\CobraClient\Cobra-Client\resources\CustomColor.txt" (
+ if exist "C:\CobraClient\CobraClientInstall\resources\CustomColor.txt" (
     goto BetaLock
  ) else (
     goto StartColor
  )
 
 :StartColor
-cd C:\CobraClient\Cobra-Client\resources\
+cd C:\CobraClient\CobraClientInstall\resources\
 echo A CUSTOM COLOER IS SET! >>CustomColor.txt
 :ColorsMenu
 title Cobra Client - Colors Menu
