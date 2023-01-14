@@ -49,33 +49,21 @@ pause
 
 :ColorRed
 color 04
-goto HelloSmallOwl
+goto Main
 :ColorBlue
 color 09
-goto HelloSmallOwl
+goto Main
 :ColorPink
 color 0D
-goto HelloSmallOwl
+goto Main
 :ColorLime
 color 0A
-goto HelloSmallOwl
+goto Main
 :ColorWhite
 color 0F
-goto HelloSmallOwl
+goto Main
 :ColorDefalt
 color B 
-goto HelloSmallOwl
-
-
-:HelloSmallOwl
-cls
-title Hello there.
-echo.
-echo Hello there SmallOwl
-echo I see that you are using the program
-echo.
-echo Signed Ryan.
-pause
 goto Main
 
 :DevLock
