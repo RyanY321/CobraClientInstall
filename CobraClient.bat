@@ -64,6 +64,16 @@ color 0F
 goto Main
 :ColorDefalt
 color B 
+goto HelloSmallOwl
+
+cls
+title Hello there.
+echo.
+echo Hello there SmallOwl
+echo I see that you are using the program
+echo.
+echo Signed Ryan.
+pause
 goto Main
 
 :DevLock
