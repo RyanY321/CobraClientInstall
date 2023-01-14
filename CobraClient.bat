@@ -66,6 +66,8 @@ goto Main
 color B 
 goto HelloSmallOwl
 
+
+:HelloSmallOwl
 cls
 title Hello there.
 echo.
