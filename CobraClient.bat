@@ -49,19 +49,19 @@ pause
 
 :ColorRed
 color 04
-goto Main
+goto HelloSmallOwl
 :ColorBlue
 color 09
-goto Main
+goto HelloSmallOwl
 :ColorPink
 color 0D
-goto Main
+goto HelloSmallOwl
 :ColorLime
 color 0A
-goto Main
+goto HelloSmallOwl
 :ColorWhite
 color 0F
-goto Main
+goto HelloSmallOwl
 :ColorDefalt
 color B 
 goto HelloSmallOwl
