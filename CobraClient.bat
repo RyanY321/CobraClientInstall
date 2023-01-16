@@ -83,6 +83,27 @@ echo Incorrect passcode! Press any key to try again.
 pause >nul
 Goto Main
 
+:DevMain
+title Cobra Client - Dev Menu
+cls
+echo.
+echo ░█████╗░░█████╗░██████╗░██████╗░░█████╗░
+echo ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+echo ██║░░╚═╝██║░░██║██████╦╝██████╔╝███████║
+echo ██║░░██╗██║░░██║██╔══██╗██╔══██╗██╔══██║
+echo ╚█████╔╝╚█████╔╝██████╦╝██║░░██║██║░░██║
+echo ░╚════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝
+echo ==========================================
+echo User : %USERNAME
+echo Date & Time : %date% @ %time%
+echo Version - 1.0 - In DEV
+echo Press O to open Options
+echo ==========================================
+echo More to be coming soon in this menu.
+echo Please check back later.
+pause
+goto Main
+
 :Main
 title Cobra Client
 cls
@@ -95,7 +116,7 @@ echo ╚█████╔╝╚█████╔╝██████╦╝█
 echo ░╚════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝
 echo ==========================================
 echo User : %USERNAME%
-echo Date : %date%
+echo Date & Time : %date% @ %time%
 echo Version - 1.0
 echo Press D to open DEV MENU
 echo Press O to open Options
@@ -679,7 +700,7 @@ echo ░╚════╝░░╚════╝░╚═════╝░╚
 echo ==========================================
 echo Options Menu
 echo ==========================================
-echo (1) Headless Mode
+echo (1) Headless Mode ( Broken )
 echo ==========================================
 echo (2) Colors
 echo ==========================================
@@ -692,6 +713,23 @@ if %errorlevel% == 3 goto OpenOnBootMenu
 if %errorlevel% == 4 goto Main
 
 :HeadlessMenu
+title Cobra Client - Error
+cls
+echo.
+echo ░█████╗░░█████╗░██████╗░██████╗░░█████╗░
+echo ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+echo ██║░░╚═╝██║░░██║██████╦╝██████╔╝███████║
+echo ██║░░██╗██║░░██║██╔══██╗██╔══██╗██╔══██║
+echo ╚█████╔╝╚█████╔╝██████╦╝██║░░██║██║░░██║
+echo ░╚════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝
+echo ==========================================
+echo Headless Menu is currently not working,
+echo please check in on the next Cobra Client
+echo update, thank you for your time and patience.
+pause
+goto Main
+
+:RealHeadlessMenu
 title Cobra Client - Headless Menu
 cls
 echo.
