@@ -116,7 +116,7 @@ echo ╚█████╔╝╚█████╔╝██████╦╝█
 echo ░╚════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝
 echo ==========================================
 echo User : %USERNAME%
-echo Date & Time : %date% @ %time%
+echo Date : %date%
 echo Version - 1.0
 echo Press D to open DEV MENU
 echo Press O to open Options
