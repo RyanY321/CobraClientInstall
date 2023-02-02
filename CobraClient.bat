@@ -535,7 +535,7 @@ goto LogContentCheck
 
 :LogContinueAdd
 cd C:\CobraFiles\Notes
-echo %LogCont%>> "%LogName%.txt"
+echo %LogCont%>> "%LogName%.CobraClient"
 echo Added to log!
 pause
 goto Main
@@ -556,14 +556,13 @@ echo ==========================================
 cd C:\CobraFiles\Notes
 dir /b /a-d 
 echo ==========================================
-echo Include .txt in your removal of the log
-echo else remove log will not work
-echo (CASE SENSITIVE)
+echo The Cobra Client Logs are CASE SENSITIVE
+echo Please enter in all Charachters.
 echo ==========================================
 set /p RemoveLog=Which log would you like to delete? 
 
 cd C:\CobraFiles\Notes
-del /Q /F "%RemoveLog%"
+del /Q /F "%RemoveLog%.CobraClient"
 echo Removed Log.
 pause
 goto Main
@@ -584,9 +583,8 @@ echo ==========================================
 cd C:\CobraFiles\Notes
 dir /b /a-d 
 echo ==========================================
-echo include .txt in your viewing of the log
-echo else the viewing of the log will not work
-echo (CASE SENSITIVE)
+echo The Cobra Client Logs are CASE SENSITIVE
+echo Please enter in all Charachters.
 echo ==========================================
 set /p ViewLog=Which log would you like view? 
 
@@ -601,7 +599,7 @@ echo ██║░░██╗██║░░██║██╔══██╗█
 echo ╚█████╔╝╚█████╔╝██████╦╝██║░░██║██║░░██║
 echo ░╚════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝
 echo ==========================================
-type C:\CobraFiles\Notes\%ViewLog%
+type "C:\CobraFiles\Notes\%ViewLog%.CobraClient"
 echo ==========================================
 echo (1) Edit Log
 echo ==========================================
@@ -609,13 +607,16 @@ echo (2) Log Add
 echo ==========================================
 echo (3) Log Remove
 echo ==========================================
-echo (4) Exit
+echo (4) Export Log
+echo ==========================================
+echo (5) Exit
 echo ==========================================
 choice /c 1234 /n
 if %errorlevel% == 1 goto EditLog
 if %errorlevel% == 2 goto LAdd
 if %errorlevel% == 3 goto ViewRemove
-if %errorlevel% == 4 goto Main
+if %errorlevel% == 4 goto LogExport
+if %errorlevel% == 5 goto Main
 
 :EditLog
 cd C:\CobraFiles\Notes
@@ -624,7 +625,7 @@ goto Main
 
 :ViewRemove
 cd C:\CobraFiles\Notes
-del "C:\CobraFiles\Notes\%ViewLog%"
+del "C:\CobraFiles\Notes\%ViewLog%.CobraClient"
 echo Log Removed.
 pause
 goto Main
@@ -645,15 +646,114 @@ echo ==========================================
 cd C:\CobraFiles\Notes
 dir /b /a-d 
 echo ==========================================
-echo include .txt in your edit of the log
-echo else the editing of the log will not work
-echo (CASE SENSITIVE)
+echo The Cobra Client Logs are CASE SENSITIVE
+echo Please enter in all Charachters.
 echo ==========================================
 set /p EditLog=Which log would you like to edit? 
 
 cd C:\CobraFiles\Notes
-start C:\CobraFiles\Notes\%EditLog%
+start "C:\CobraFiles\Notes\%EditLog%.CobraClient"
 goto Main
+
+:LogExport
+title Cobra Client - Export Log
+cls
+echo.
+echo ░█████╗░░█████╗░██████╗░██████╗░░█████╗░
+echo ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+echo ██║░░╚═╝██║░░██║██████╦╝██████╔╝███████║
+echo ██║░░██╗██║░░██║██╔══██╗██╔══██╗██╔══██║
+echo ╚█████╔╝╚█████╔╝██████╦╝██║░░██║██║░░██║
+echo ░╚════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝
+echo ==========================================
+echo List Of All Logs
+echo ==========================================
+cd C:\CobraFiles\Notes
+dir /b /a-d
+echo ==========================================
+echo The Cobra Client Logs are CASE SENSITIVE
+echo Please enter in all Charachters.
+echo ==========================================
+set /p ExportLog=Which log would you like to export? 
+
+cd C:\CobraFiles\Notes
+echo ==========================================
+echo Where would you like to export the Log to?
+echo.
+echo (1) Desktop
+echo.
+echo (2) Downloads
+echo.
+echo (3) Documents
+echo.
+echo ==========================================
+choice /c 123 /n
+if %errorlevel% == 1 goto ExportDesktopCheck
+if %errorlevel% == 2 goto ExportDownloadsCheck
+if %errorlevel% == 3 goto ExportDocumentsCheck
+
+
+
+:ExportDesktopCheck
+if exist "C:\Users\%USERNAME%\OneDrive\Desktop" (
+	goto DesktopONEExist
+) else (
+	goto DesktopExist
+)
+
+:DesktopONEExist
+set /p rename=What would you like to rename the log to?
+cd C:\CobraFiles\Notes
+move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\OneDrive\Desktop"
+rename "C:\Users\%USERNAME%\OneDrive\Desktop\%Exportlog%.CobraClient" "%rename%.txt"
+
+:DesktopExist
+set /p rename=What would you like to rename the log to?
+cd C:\CobraFiles\Notes
+move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\Desktop"
+rename "C:\Users\%USERNAME%\Desktop\%Exportlog%.CobraClient" "%rename%.txt"
+
+
+
+:ExportDownloadsCheck
+if exist "C:\Users\%USERNAME%\OneDrive\Downloads" (
+	goto DownloadsONEExist
+) else (
+	goto DownloadsExist
+)
+
+:DownloadsONEExist
+set /p rename=What would you like to rename the log to?
+cd C:\CobraFiles\Notes
+move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\OneDrive\Downloads"
+rename "C:\Users\%USERNAME%\OneDrive\Downloads\%Exportlog%.CobraClient" "%rename%.txt"
+
+:DownloadsExist
+set /p rename=What would you like to rename the log to?
+cd C:\CobraFiles\Notes
+move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\Downloads"
+rename "C:\Users\%USERNAME%\Downloads\%Exportlog%.CobraClient" "%rename%.txt"
+
+
+
+:ExportDocumentsCheck
+if exist "C:\Users\%USERNAME%\OneDrive\Documents" (
+	goto DocumentsONEExist
+) else (
+	goto DocumentsExist
+)
+
+:DocumentsONEExist
+set /p rename=What would you like to rename the log to?
+cd C:\CobraFiles\Notes
+move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\OneDrive\Documents"
+rename "C:\Users\%USERNAME%\OneDrive\Documents\%Exportlog%.CobraClient" "%rename%.txt"
+
+:DocumentsExist
+set /p rename=What would you like to rename the log to?
+cd C:\CobraFiles\Notes
+move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\Documents"
+rename "C:\Users\%USERNAME%\Documents\%Exportlog%.CobraClient" "%rename%.txt"
 
 :LogContentCheck
 
