@@ -611,7 +611,7 @@ echo (4) Export Log
 echo ==========================================
 echo (5) Exit
 echo ==========================================
-choice /c 1234 /n
+choice /c 12345 /n
 if %errorlevel% == 1 goto EditLog
 if %errorlevel% == 2 goto LAdd
 if %errorlevel% == 3 goto ViewRemove
