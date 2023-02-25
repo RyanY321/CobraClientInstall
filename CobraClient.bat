@@ -706,6 +706,9 @@ set /p rename=What would you like to rename the log to?
 cd C:\CobraFiles\Notes
 move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\OneDrive\Desktop"
 rename "C:\Users\%USERNAME%\OneDrive\Desktop\%Exportlog%.CobraClient" "%rename%.txt"
+cls
+echo %rename% has been put into C:\Users\%USERNAME%\OneDrive\Desktop\
+pause
 goto Main
 
 :DesktopExist
@@ -713,6 +716,9 @@ set /p rename=What would you like to rename the log to?
 cd C:\CobraFiles\Notes
 move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\Desktop"
 rename "C:\Users\%USERNAME%\Desktop\%Exportlog%.CobraClient" "%rename%.txt"
+cls
+echo %rename% has been put into C:\Users\%USERNAME%\Desktop\
+pause
 goto Main
 
 
@@ -729,6 +735,9 @@ set /p rename=What would you like to rename the log to?
 cd C:\CobraFiles\Notes
 move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\OneDrive\Downloads"
 rename "C:\Users\%USERNAME%\OneDrive\Downloads\%Exportlog%.CobraClient" "%rename%.txt"
+cls
+echo %rename% has been put into C:\Users\%USERNAME%\OneDrive\Downloads\
+pause
 goto Main
 
 :DownloadsExist
@@ -736,6 +745,9 @@ set /p rename=What would you like to rename the log to?
 cd C:\CobraFiles\Notes
 move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\Downloads"
 rename "C:\Users\%USERNAME%\Downloads\%Exportlog%.CobraClient" "%rename%.txt"
+cls
+echo %rename% has been put into C:\Users\%USERNAME%\Downloads\
+pause
 goto Main
 
 
@@ -752,6 +764,9 @@ set /p rename=What would you like to rename the log to?
 cd C:\CobraFiles\Notes
 move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\OneDrive\Documents"
 rename "C:\Users\%USERNAME%\OneDrive\Documents\%Exportlog%.CobraClient" "%rename%.txt"
+cls
+echo %rename% has been put into C:\Users\%USERNAME%\OneDrive\Documents\
+pause
 goto Main
 
 :DocumentsExist
@@ -759,6 +774,9 @@ set /p rename=What would you like to rename the log to?
 cd C:\CobraFiles\Notes
 move /Y "C:\CobraFiles\Notes\%ExportLog%.CobraClient" "C:\Users\%USERNAME%\Documents"
 rename "C:\Users\%USERNAME%\Documents\%Exportlog%.CobraClient" "%rename%.txt"
+cls
+echo %rename% has been put into C:\Users\%USERNAME%\Documents\
+pause
 goto Main
 
 :LogContentCheck
